@@ -1,6 +1,3 @@
-from ortools.sat.python import cp_model
-from icecream import ic
-import sys
 from datetime import date, timedelta
 
 def generate_dates(start_date: str, end_date: str) -> list:

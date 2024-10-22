@@ -1,6 +1,5 @@
 from typing import List
 from classes import Scheduler
-import cfg
 
 def constraint_hard_includes(scheduler:Scheduler):
     """
@@ -19,7 +18,7 @@ def constraint_hard_excludes(scheduler:Scheduler):
     """
     dates = scheduler.dates
 
-    for doctor, exclude_dates in cfg.hard_exclude.items():
+    for doctor, exclude_dates in scheduler.cfg.hard_exclude.items():
         for d in exclude_dates:
             if d in dates:
                 scheduler.model.Add(scheduler.schedule[doctor][d] == 0)

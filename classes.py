@@ -4,16 +4,21 @@ import sys
 from datetime import date, timedelta
 
 from util import generate_dates
-import cfg
 
 class Scheduler:
-    def __init__(self):
+    def __init__(self, cfg):
+        self.dates = generate_dates(cfg.START_DATE, cfg.END_DATE)
+        self.weekdays = [d for d in self.dates if date.fromisoformat(d).weekday() < 5]  # Monday to Friday are 0-4
+        self.weekends = [d for d in self.dates if date.fromisoformat(d).weekday() >= 5]  # Saturday and Sunday are 5-6
+        self.holidays = [d for d in cfg.HOLIDAYS if d in self.dates]
+        self.employees = cfg.employees
+        
         self.cfg = cfg
         self.model = cp_model.CpModel()
         self.schedule = {
             e: {
                 d: self.model.NewBoolVar(f"schedule_{e}_{d}")
-                for d in cfg.dates
+                for d in self.dates
             } for e in cfg.employees
         }
 
@@ -21,11 +26,11 @@ class Scheduler:
         solver = cp_model.CpSolver()
         status = solver.solve(self.model)
 
-        dates = self.cfg.dates
-        employees = self.cfg.employees
-        weekdays = self.cfg.weekdays
-        weekends = self.cfg.weekends
-        holidays = [d for d in self.cfg.HOLIDAYS if d in dates]
+        dates = self.dates
+        employees = self.employees
+        weekdays = self.weekdays
+        weekends = self.weekends
+        holidays = self.holidays
 
         if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
             # Loop through each date

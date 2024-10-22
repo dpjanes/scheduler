@@ -1,4 +1,10 @@
 
+special_dates = set()
+for dates_list in hard_include.values():
+    special_dates.update(dates_list)
+for dates_list in hard_exclude.values():
+    special_dates.update(dates_list)
+
 
 ## ---
 # Check if any of the 3-day window dates are in the excluded set

@@ -34,6 +34,12 @@ def constraint_one_doctor_per_day(scheduler:Scheduler):
         scheduler.model.Add(sum(scheduler.schedule[e][d] for e in employees) == 1)
 
 def constraint_no_more_than_once_in_n_days(scheduler:Scheduler, N:int=7, dates:List[str]=None):
+    """
+    Constraint: Make sure over some date range, no doctor is scheduled more than once.
+
+    We exclude dates that are in the hard_exclude or hard_include lists for that doctor
+    (mabe hard_exclude should be ignored?)
+    """
     dates = scheduler.dates
     employees = scheduler.employees
     dates = dates or scheduler.dates

@@ -26,21 +26,39 @@ dates = generate_dates(START_DATE, END_DATE)
 model = cp_model.CpModel()
 
 employees = [
-    "McCarthy, Jason",
-    "Tarhoni, Mohamed",
-    "Smith, Jennifer",
-    "Woodman, Margie",
-    "Joshi, Pradip",
-    "Perry, Jennifer",
-    "O'Donnell, Kathleen",
-    "Mercer, Susan",
-    "Babb, Kim",
-    ## "Pridham, Allison",
-    "Morrison, Gillian",
+    "McCarthy, J",
+    "Tarhoni, M",
+    "Smith, J",
+    "Woodman, M",
+    "Joshi, P",
+    "Perry, J",
+    "O'Donnell, K",
+    "Mercer, S",
+    "Babb, K",
+    ## "Pridham, A",
+    "Morrison, G",
 ]
+
+hard_include = {
+    "Woodman, M": ["2025-01-10", "2025-01-11", "2025-01-12"],
+}
+hard_exclude = {
+    "Perry, J": ["2024-11-11", "2024-11-30", "2024-12-21"],
+    "McCarthy, J": ["2024-11-12", "2024-11-13", "2024-11-14", "2024-11-15", "2024-11-16", "2024-11-17"],    
+}
+
+# Constraint: "Joshi, P" - Exclude all dates after 2024-12-20
+hard_exclude["Joshi, P"] = generate_dates("2024-12-20", END_DATE)
+
 
 weekdays = [d for d in dates if date.fromisoformat(d).weekday() < 5]  # Monday to Friday are 0-4
 weekends = [d for d in dates if date.fromisoformat(d).weekday() >= 5]  # Saturday and Sunday are 5-6
+
+excluded_dates = set()
+for dates_list in hard_include.values():
+    excluded_dates.update(dates_list)
+for dates_list in hard_exclude.values():
+    excluded_dates.update(dates_list)
 
 # employee/day
 # employee/date schedule
@@ -50,6 +68,19 @@ schedule = {
         for d in dates
     } for e in employees
 }
+
+# Constraint: Enforce inclusion of specific dates for each doctor in hard_include
+for doctor, include_dates in hard_include.items():
+    for d in include_dates:
+        if d in dates:
+            model.Add(schedule[doctor][d] == 1)
+
+# Constraint: Enforce exclusion of specific dates for each doctor in hard_exclude
+for doctor, exclude_dates in hard_exclude.items():
+    for d in exclude_dates:
+        if d in dates:
+            model.Add(schedule[doctor][d] == 0)
+
 
 ## --
 # Constraint: Exactly one doctor works each day
@@ -64,9 +95,15 @@ for d in dates:
 
 ## ---
 # Constraint: No employee works more than once in any 3-day period
+# for e in employees:
+#     for i in range(len(dates) - 2):  # Stop at len(dates) - 2 to avoid out-of-range error
+#         model.Add(schedule[e][dates[i]] + schedule[e][dates[i + 1]] + schedule[e][dates[i + 2]] <= 1)
+# Constraint: No employee works more than once in any 3-day period, excluding hard include/exclude dates
 for e in employees:
-    for i in range(len(dates) - 2):  # Stop at len(dates) - 2 to avoid out-of-range error
-        model.Add(schedule[e][dates[i]] + schedule[e][dates[i + 1]] + schedule[e][dates[i + 2]] <= 1)
+    for i in range(len(dates) - 2):
+        # Check if any of the 3-day window dates are in the excluded set
+        if dates[i] not in excluded_dates and dates[i + 1] not in excluded_dates and dates[i + 2] not in excluded_dates:
+            model.Add(schedule[e][dates[i]] + schedule[e][dates[i + 1]] + schedule[e][dates[i + 2]] <= 1)
 
 ## ---
 # Calculate average number of weekday assignments per employee
@@ -114,8 +151,20 @@ for e in employees:
     model.Add(num_holiday_assignments >= average_holiday_assignments)
     model.Add(num_holiday_assignments <= average_holiday_assignments + 1)
 
-ic(schedule)
-# sys.exit(0)
+## -- 
+# Constraint: Enforce specific dates for Woodman
+specific_dates = ["2025-01-10", "2025-01-11", "2025-01-12"]
+
+for d in specific_dates:
+    if d in dates:
+        model.Add(schedule["Woodman, M"][d] == 1)
+
+# Range of dates between Jan 6 and Jan 18 (excluding specific_dates)
+extra_dates_range = [d for d in dates if "2025-01-06" <= d <= "2025-01-18" and d not in specific_dates]
+
+## -- 
+# Constraint: Woodman should have exactly three additional call dates between Jan 6 and Jan 18
+# model.Add(sum(schedule["Woodman, M"][d] for d in extra_dates_range) == 3)
 
 ## -------------------------------------------- ##
 # Solve the model

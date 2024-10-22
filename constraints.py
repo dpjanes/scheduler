@@ -7,7 +7,7 @@ def constraint_hard_includes(scheduler:Scheduler):
     """
     dates = scheduler.dates
 
-    for doctor, include_dates in scheduler.cfg.hard_include.items():
+    for doctor, include_dates in scheduler.hard_include.items():
         for d in include_dates:
             if d in dates:
                 scheduler.model.Add(scheduler.schedule[doctor][d] == 1)
@@ -18,7 +18,7 @@ def constraint_hard_excludes(scheduler:Scheduler):
     """
     dates = scheduler.dates
 
-    for doctor, exclude_dates in scheduler.cfg.hard_exclude.items():
+    for doctor, exclude_dates in scheduler.hard_exclude.items():
         for d in exclude_dates:
             if d in dates:
                 scheduler.model.Add(scheduler.schedule[doctor][d] == 0)
@@ -39,6 +39,6 @@ def constraint_no_more_than_once_in_n_days(scheduler:Scheduler, N:int=7, dates:L
     dates = dates or scheduler.dates
 
     for e in employees:
-        ignore_dates = set(scheduler.cfg.hard_exclude.get(e, []) + scheduler.cfg.hard_include.get(e, []))
+        ignore_dates = scheduler.hard_exclude.get(e) | scheduler.hard_include.get(e)
         for i in range(len(dates) - N + 1): 
             scheduler.model.Add(sum(scheduler.schedule[e][dates[i + j]] for j in range(N) if dates[i + j] not in ignore_dates) <= 1)

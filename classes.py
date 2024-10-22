@@ -12,6 +12,12 @@ class Scheduler:
         self.weekends = [d for d in self.dates if date.fromisoformat(d).weekday() >= 5]  # Saturday and Sunday are 5-6
         self.holidays = [d for d in cfg.HOLIDAYS if d in self.dates]
         self.employees = cfg.employees
+
+        self.hard_include = dict()
+        self.hard_exclude = dict()
+        for employee in self.employees:
+            self.hard_include[employee] = set(cfg.hard_include.get(employee) or [])
+            self.hard_exclude[employee] = set(cfg.hard_exclude.get(employee) or [])
         
         self.cfg = cfg
         self.model = cp_model.CpModel()

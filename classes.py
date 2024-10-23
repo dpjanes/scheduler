@@ -14,8 +14,10 @@ class Scheduler:
         self.employees = cfg.employees
 
         self.hard_include = dict()
+        self.soft_include = dict()
         self.hard_exclude = dict()
         for employee in self.employees:
+            self.soft_include[employee] = set(cfg.soft_include.get(employee) or [])
             self.hard_include[employee] = set(cfg.hard_include.get(employee) or [])
             self.hard_exclude[employee] = set(cfg.hard_exclude.get(employee) or [])
         

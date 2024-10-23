@@ -45,6 +45,6 @@ def constraint_no_more_than_once_in_n_days(scheduler:Scheduler, N:int=7, dates:L
     dates = dates or scheduler.dates
 
     for e in employees:
-        ignore_dates = scheduler.hard_exclude.get(e) | scheduler.hard_include.get(e)
+        ignore_dates = scheduler.hard_exclude.get(e) | scheduler.hard_include.get(e)| scheduler.soft_include.get(e)
         for i in range(len(dates) - N + 1): 
             scheduler.model.Add(sum(scheduler.schedule[e][dates[i + j]] for j in range(N) if dates[i + j] not in ignore_dates) <= 1)

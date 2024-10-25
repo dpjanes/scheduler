@@ -7,6 +7,8 @@ from util import generate_dates
 
 class Scheduler:
     def __init__(self, cfg):
+        self.cfg = cfg
+
         self.dates = generate_dates(cfg.START_DATE, cfg.END_DATE)
         self.weekdays = [d for d in self.dates if date.fromisoformat(d).weekday() < 5]  # Monday to Friday are 0-4
         self.weekends = [d for d in self.dates if date.fromisoformat(d).weekday() >= 5]  # Saturday and Sunday are 5-6
@@ -21,7 +23,7 @@ class Scheduler:
             self.hard_include[employee] = set(cfg.hard_include.get(employee) or [])
             self.hard_exclude[employee] = set(cfg.hard_exclude.get(employee) or [])
         
-        self.cfg = cfg
+        self.penalties = []
         self.model = cp_model.CpModel()
         self.schedule = {
             e: {
@@ -31,6 +33,8 @@ class Scheduler:
         }
 
     def solve(self):
+        self.model.Minimize(sum(self.penalties))
+
         solver = cp_model.CpSolver()
         status = solver.solve(self.model)
 
@@ -48,6 +52,9 @@ class Scheduler:
                 weekday_name = date.fromisoformat(d).strftime('%A')  # Get full weekday name
                 if weekday_name == "Monday":
                     print()
+
+                # if weekday_name not in [ "Saturday", "Sunday"]:
+                #     continue
                 
                 # Collect doctors working on this day
                 working_doctors = [e for e in employees if solver.Value(self.schedule[e][d]) == 1]
@@ -55,6 +62,7 @@ class Scheduler:
                 # Print the date, weekday, and doctors working
                 print(f"{d} {weekday_name[:3]}: {', '.join(working_doctors) if working_doctors else 'None'}")
 
+            # return
             print("\n=== TOTALS ===")
             for e in employees:
                 total_shifts = sum(solver.Value(self.schedule[e][d]) for d in dates)

@@ -1,133 +1,134 @@
 === SHIFTS ===
 2024-11-10 Sun: Joshi, P
 
-2024-11-11 Mon: Mercer, S
-2024-11-12 Tue: Smith, J
+2024-11-11 Mon: Babb, K
+2024-11-12 Tue: Morrison, G
 2024-11-13 Wed: O'Donnell, K
-2024-11-14 Thu: Morrison, G
-2024-11-15 Fri: Woodman, M
+2024-11-14 Thu: Perry, J
+2024-11-15 Fri: Joshi, P
 2024-11-16 Sat: Tarhoni, M
-2024-11-17 Sun: Joshi, P
+2024-11-17 Sun: Tarhoni, M
 
-2024-11-18 Mon: McCarthy, J
-2024-11-19 Tue: Perry, J
-2024-11-20 Wed: Mercer, S
-2024-11-21 Thu: Morrison, G
-2024-11-22 Fri: Mercer, S
-2024-11-23 Sat: Babb, K
-2024-11-24 Sun: Joshi, P
+2024-11-18 Mon: Mercer, S
+2024-11-19 Tue: Smith, J
+2024-11-20 Wed: McCarthy, J
+2024-11-21 Thu: Babb, K
+2024-11-22 Fri: Tarhoni, M
+2024-11-23 Sat: Perry, J
+2024-11-24 Sun: Perry, J
 
-2024-11-25 Mon: Tarhoni, M
-2024-11-26 Tue: Perry, J
-2024-11-27 Wed: McCarthy, J
-2024-11-28 Thu: O'Donnell, K
-2024-11-29 Fri: Smith, J
-2024-11-30 Sat: Morrison, G
-2024-12-01 Sun: Joshi, P
+2024-11-25 Mon: Mercer, S
+2024-11-26 Tue: Morrison, G
+2024-11-27 Wed: Joshi, P
+2024-11-28 Thu: Mercer, S
+2024-11-29 Fri: Mercer, S
+2024-11-30 Sat: O'Donnell, K
+2024-12-01 Sun: O'Donnell, K
 
-2024-12-02 Mon: Babb, K
-2024-12-03 Tue: Tarhoni, M
-2024-12-04 Wed: O'Donnell, K
-2024-12-05 Thu: O'Donnell, K
-2024-12-06 Fri: McCarthy, J
-2024-12-07 Sat: Woodman, M
-2024-12-08 Sun: Morrison, G
+2024-12-02 Mon: O'Donnell, K
+2024-12-03 Tue: Babb, K
+2024-12-04 Wed: Tarhoni, M
+2024-12-05 Thu: Perry, J
+2024-12-06 Fri: Joshi, P
+2024-12-07 Sat: Smith, J
+2024-12-08 Sun: Smith, J
 
-2024-12-09 Mon: Joshi, P
-2024-12-10 Tue: Perry, J
-2024-12-11 Wed: Babb, K
+2024-12-09 Mon: O'Donnell, K
+2024-12-10 Tue: Morrison, G
+2024-12-11 Wed: Woodman, M
 2024-12-12 Thu: Smith, J
 2024-12-13 Fri: McCarthy, J
-2024-12-14 Sat: O'Donnell, K
-2024-12-15 Sun: Morrison, G
+2024-12-14 Sat: Mercer, S
+2024-12-15 Sun: Mercer, S
 
 2024-12-16 Mon: Tarhoni, M
 2024-12-17 Tue: Joshi, P
 2024-12-18 Wed: O'Donnell, K
-2024-12-19 Thu: Perry, J
-2024-12-20 Fri: Smith, J
-2024-12-21 Sat: Mercer, S
-2024-12-22 Sun: Woodman, M
+2024-12-19 Thu: Morrison, G
+2024-12-20 Fri: Perry, J
+2024-12-21 Sat: McCarthy, J
+2024-12-22 Sun: McCarthy, J
 
-2024-12-23 Mon: Babb, K
+2024-12-23 Mon: Woodman, M
 2024-12-24 Tue: Woodman, M
-2024-12-25 Wed: McCarthy, J
-2024-12-26 Thu: Morrison, G
-2024-12-27 Fri: Perry, J
-2024-12-28 Sat: Smith, J
-2024-12-29 Sun: Tarhoni, M
+2024-12-25 Wed: Tarhoni, M
+2024-12-26 Thu: Babb, K
+2024-12-27 Fri: McCarthy, J
+2024-12-28 Sat: O'Donnell, K
+2024-12-29 Sun: O'Donnell, K
 
-2024-12-30 Mon: Woodman, M
-2024-12-31 Tue: Mercer, S
-2025-01-01 Wed: McCarthy, J
-2025-01-02 Thu: O'Donnell, K
-2025-01-03 Fri: Perry, J
-2025-01-04 Sat: Morrison, G
-2025-01-05 Sun: Tarhoni, M
+2024-12-30 Mon: Smith, J
+2024-12-31 Tue: Morrison, G
+2025-01-01 Wed: Woodman, M
+2025-01-02 Thu: Perry, J
+2025-01-03 Fri: Mercer, S
+2025-01-04 Sat: Woodman, M
+2025-01-05 Sun: Woodman, M
 
-2025-01-06 Mon: Babb, K
-2025-01-07 Tue: Mercer, S
-2025-01-08 Wed: Smith, J
-2025-01-09 Thu: O'Donnell, K
+2025-01-06 Mon: O'Donnell, K
+2025-01-07 Tue: Babb, K
+2025-01-08 Wed: McCarthy, J
+2025-01-09 Thu: Tarhoni, M
 2025-01-10 Fri: Woodman, M
 2025-01-11 Sat: Woodman, M
 2025-01-12 Sun: Woodman, M
 
-2025-01-13 Mon: Morrison, G
-2025-01-14 Tue: McCarthy, J
+2025-01-13 Mon: O'Donnell, K
+2025-01-14 Tue: Perry, J
 2025-01-15 Wed: Smith, J
-2025-01-16 Thu: Perry, J
-2025-01-17 Fri: Mercer, S
-2025-01-18 Sat: Babb, K
+2025-01-16 Thu: Woodman, M
+2025-01-17 Fri: McCarthy, J
+2025-01-18 Sat: Smith, J
+2025-01-19 Sun: Smith, J
 
 === TOTALS ===
 Employee: McCarthy, J
   Total Shifts: 7
-  Weekday Shifts: 7
-  Weekend Shifts: 0
-  Holiday Shifts: 2
+  Weekday Shifts: 5
+  Weekend Shifts: 2
+  Holiday Shifts: 0
 Employee: Tarhoni, M
-  Total Shifts: 6
-  Weekday Shifts: 3
-  Weekend Shifts: 3
-  Holiday Shifts: 0
-Employee: Smith, J
   Total Shifts: 7
-  Weekday Shifts: 6
-  Weekend Shifts: 1
-  Holiday Shifts: 0
-Employee: Woodman, M
+  Weekday Shifts: 5
+  Weekend Shifts: 2
+  Holiday Shifts: 1
+Employee: Smith, J
   Total Shifts: 8
   Weekday Shifts: 4
   Weekend Shifts: 4
   Holiday Shifts: 0
-Employee: Joshi, P
-  Total Shifts: 6
-  Weekday Shifts: 2
+Employee: Woodman, M
+  Total Shifts: 10
+  Weekday Shifts: 6
   Weekend Shifts: 4
+  Holiday Shifts: 1
+Employee: Joshi, P
+  Total Shifts: 5
+  Weekday Shifts: 4
+  Weekend Shifts: 1
   Holiday Shifts: 0
 Employee: Perry, J
   Total Shifts: 7
-  Weekday Shifts: 7
-  Weekend Shifts: 0
+  Weekday Shifts: 5
+  Weekend Shifts: 2
   Holiday Shifts: 0
 Employee: O'Donnell, K
-  Total Shifts: 8
-  Weekday Shifts: 7
-  Weekend Shifts: 1
+  Total Shifts: 10
+  Weekday Shifts: 6
+  Weekend Shifts: 4
   Holiday Shifts: 0
 Employee: Mercer, S
   Total Shifts: 7
-  Weekday Shifts: 6
-  Weekend Shifts: 1
-  Holiday Shifts: 1
-Employee: Babb, K
-  Total Shifts: 6
-  Weekday Shifts: 4
+  Weekday Shifts: 5
   Weekend Shifts: 2
   Holiday Shifts: 0
+Employee: Babb, K
+  Total Shifts: 5
+  Weekday Shifts: 5
+  Weekend Shifts: 0
+  Holiday Shifts: 2
 Employee: Morrison, G
-  Total Shifts: 8
-  Weekday Shifts: 4
-  Weekend Shifts: 4
-  Holiday Shifts: 1
+  Total Shifts: 5
+  Weekday Shifts: 5
+  Weekend Shifts: 0
+  Holiday Shifts: 0

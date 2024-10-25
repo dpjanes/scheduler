@@ -2,7 +2,7 @@ from datetime import date
 from util import generate_dates
 
 START_DATE = "2024-11-10"
-END_DATE = "2025-01-18"
+END_DATE = "2025-01-19"
 HOLIDAYS = ["2024-11-11", "2024-12-25", "2024-12-26", "2025-01-01", "2025-02-17" ]
 
 
@@ -56,4 +56,6 @@ hard_exclude = {
     ]
 }
 hard_exclude["Joshi, P"] = generate_dates("2024-12-18", END_DATE)
-
+# hard_exclude = {}
+# hard_include = {}
+# soft_include = {}

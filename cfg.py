@@ -3,7 +3,10 @@ from util import generate_dates, generate_weekends
 
 START_DATE = "2025-06-04"
 END_DATE = "2025-09-09"
-HOLIDAYS = []  # None specified
+HOLIDAYS = [
+    "2025-07-01",  # Canada Day
+    "2025-09-01",  # Civic Holiday
+]  # None specified
 
 def weekend_dates():
     return generate_weekends(START_DATE, END_DATE)

@@ -12,7 +12,7 @@ constraints.constraint_no_more_than_once_in_n_days(scheduler, N=8, dates=schedul
 constraints.constraint_no_more_than_once_in_n_days(scheduler, N=7, dates=scheduler.holidays)
 constraints.constraint_no_more_than_once_in_n_days(scheduler, N=3, dates=scheduler.dates)
 constraints.constraint_equal_work_distribution(scheduler, tolerance=1, dates=scheduler.weekdays)
-constraints.constraint_equal_work_distribution(scheduler, tolerance=4, dates=scheduler.weekends)
+constraints.constraint_equal_work_distribution(scheduler, tolerance=1, dates=scheduler.weekends)
 constraints.constraint_weekend_pairing(scheduler, penalty_weight=100)
 
 scheduler.solve()

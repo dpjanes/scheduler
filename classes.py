@@ -12,6 +12,11 @@ class Scheduler:
         self.dates = generate_dates(cfg.START_DATE, cfg.END_DATE)
         self.weekdays = [d for d in self.dates if date.fromisoformat(d).weekday() < 5]  # Monday to Friday are 0-4
         self.weekends = [d for d in self.dates if date.fromisoformat(d).weekday() >= 5]  # Saturday and Sunday are 5-6
+
+        ## for weekends defined as Fri/Sat/Sun
+        self.xweekdays = [d for d in self.dates if date.fromisoformat(d).weekday() < 4]  # Monday to Thursday are 0-4
+        self.xweekends = [d for d in self.dates if date.fromisoformat(d).weekday() >= 4]  # Friday to Sunday are 4-6
+
         self.holidays = [d for d in cfg.HOLIDAYS if d in self.dates]
         self.employees = cfg.employees
 
@@ -37,6 +42,7 @@ class Scheduler:
 
         solver = cp_model.CpSolver()
         status = solver.solve(self.model)
+        ## return
 
         dates = self.dates
         employees = self.employees

@@ -31,7 +31,7 @@ employees = [
     "Smith",
     "Furey",
     "Woodman",
-    "Mercer",
+    # "Mercer",
     "Perry",
     "O'Donnell",
     "Babb",
@@ -48,10 +48,10 @@ soft_include = {
         generate_dates("2025-10-31", "2025-11-02")
     ),
 
-    "Mercer": (
-        generate_dates("2025-09-23", "2025-09-28") +
-        generate_dates("2025-10-06", "2025-10-12")
-    ),
+    # "Mercer": (
+    #     generate_dates("2025-09-23", "2025-09-28") +
+    #     generate_dates("2025-10-06", "2025-10-12")
+    # ),
 
     "Perry": (
         generate_dates("2025-11-08", "2025-11-09") +
@@ -135,12 +135,12 @@ hard_exclude = {
     ),
 
     # Mercer
-    "Mercer": (
-        generate_dates("2025-09-10", "2025-09-22") +
-        generate_dates("2025-09-29", "2025-10-05") +
-        generate_dates("2025-10-27", "2025-11-14") +
-        generate_dates("2025-11-21", "2025-12-21")
-    ),
+    # "Mercer": (
+    #     generate_dates("2025-09-10", "2025-09-22") +
+    #     generate_dates("2025-09-29", "2025-10-05") +
+    #     generate_dates("2025-10-27", "2025-11-14") +
+    #     generate_dates("2025-11-21", "2025-12-21")
+    # ),
 
     # Perry
     "Perry": (
